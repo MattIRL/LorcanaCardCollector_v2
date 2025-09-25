@@ -70,7 +70,7 @@ namespace LorcanaCardCollector.Models
         [Display(Name = "Number Owned")]
         [Range(1, int.MaxValue, ErrorMessage = "Please enter a quantity greater than zero.")]
         public int Quantity { get; set; }
-        [Display(Name = "In A Deck")]
+        [Display(Name = "In a Deck")]
         public bool InADeck { get; set; }
     }
 }

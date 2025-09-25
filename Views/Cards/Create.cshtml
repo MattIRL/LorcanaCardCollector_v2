@@ -10,27 +10,29 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <div class="form-group mb-sm-2">
                 <label asp-for="CardName" class="control-label"></label>
                 <input asp-for="CardName" class="form-control" />
                 <span asp-validation-for="CardName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-sm-2">
                 <label asp-for="GemColor" class="control-label"></label>
-                <select asp-for="GemColor" class="form-control" asp-items="Html.GetEnumSelectList<GemColor>()"></select>
+                <select asp-for="GemColor" class="form-control" asp-items="Html.GetEnumSelectList<GemColor>()">
+                    <option value="">Gem Color(s)</option>
+                </select>
                 <span asp-validation-for="GemColor" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-sm-2">
                 <label asp-for="SetName" class="control-label"></label>
                 <input asp-for="SetName" class="form-control" />
                 <span asp-validation-for="SetName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-sm-2">
                 <label asp-for="Quantity" class="control-label"></label>
                 <input asp-for="Quantity" class="form-control" />
                 <span asp-validation-for="Quantity" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
+            <div class="form-group form-check mt-sm-2">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="InADeck" /> @Html.DisplayNameFor(model => model.InADeck)
                 </label>
