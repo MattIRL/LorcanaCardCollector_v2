@@ -1,0 +1,68 @@
+﻿@model IEnumerable<LorcanaCardCollector.Models.Cards>
+
+@{
+    ViewData["Title"] = "Card Collection";
+}
+
+<h1 class="text-light freckle-font">Card Collection</h1>
+
+<div class="bg-opacity-70 bg-light rounded shadow-sm">
+
+<p>
+    <a asp-action="Create" class="m-sm-2 btn btn-primary rounded-2">Create New</a>
+</p>
+<table class="table table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CardName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GemColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SetName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InADeck)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CardName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GemColor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SetName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @if (item.InADeck)
+                        {
+                                    <span class="text-success">✓</span>
+                        }
+                        else
+                        {
+                            <span></span>
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>
+                </tr>
+}</div>
+        </tbody>
+</table>

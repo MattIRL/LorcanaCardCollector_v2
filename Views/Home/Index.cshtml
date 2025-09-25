@@ -1,0 +1,23 @@
+﻿@model LorcanaCardCollectorModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="bg-opacity-70 bg-light text-center m-sm-4 rounded shadow-sm">
+    <h3 class="display-6 text-gray-800 pt-sm-4">Welcome to the</h3>
+    <h1 class="display-4 text-gray-800 mb-sm-4 freckle-font">Lorcana Card Collector</h1>
+
+    <!-- Search bar and buttons -->
+    <form action="/Home/Index" method="post" >
+        <div class="form-group p-sm-4">
+            <label asp-for="CardName" class="form-label h4 freckle-face-regular">Search for a Card Name</label>
+            <input asp-for="CardName" class="form-control" />
+        </div>
+        <button type="submit" class="btn-primary m-sm-3 rounded-2 ps-sm-2 pe-sm-2">
+            <i class="fa fa-search"></i> Search</button>
+        <a asp-action="Index" class="m-sm-3">Clear</a>
+    </form>
+</div>
+
+<!-- Dynamic area to display cards or error message -->
+<div class="m-4 text-center">@Html.Raw(ViewBag.Results)</div>
