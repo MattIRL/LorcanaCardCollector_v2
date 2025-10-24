@@ -23,5 +23,22 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-image: url("/Images/LCC_Logo_50.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #212529;
+}
+.btn-primary {
+    background-color: #0092c7 !important;
+    border-color: #005e80 !important;
+    color: aliceblue !important;
+}
+
+.btn-primary:hover {
+    background-color: #005e80 !important;
+    border-color: #004159 !important;
+}
+a {
+    color: #005e80 !important;
 }

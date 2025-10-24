@@ -23,11 +23,8 @@ namespace LorcanaCardCollector.Migrations
 
             modelBuilder.Entity("LorcanaCardCollector.Models.Cards", b =>
                 {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                    b.Property<string>("ID")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CardName")
                         .IsRequired()
@@ -55,7 +52,7 @@ namespace LorcanaCardCollector.Migrations
                     b.HasData(
                         new
                         {
-                            ID = 1,
+                            ID = "ARI-001",
                             CardName = "Rhino - Motivational Speaker",
                             GemColor = 10,
                             InADeck = true,
@@ -64,7 +61,7 @@ namespace LorcanaCardCollector.Migrations
                         },
                         new
                         {
-                            ID = 2,
+                            ID = "ARI-002",
                             CardName = "Perdita - Playful Mother",
                             GemColor = 9,
                             InADeck = false,
@@ -73,7 +70,7 @@ namespace LorcanaCardCollector.Migrations
                         },
                         new
                         {
-                            ID = 3,
+                            ID = "AIR-003",
                             CardName = "King Stefan - New Father",
                             GemColor = 0,
                             InADeck = true,

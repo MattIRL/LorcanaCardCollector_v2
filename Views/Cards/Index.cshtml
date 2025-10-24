@@ -4,9 +4,9 @@
     ViewData["Title"] = "Card Collection";
 }
 
-<h1 class="text-light freckle-font">Card Collection</h1>
+<h1 class="freckle-font" style="color: #d5b88b; opacity: 0.9;">Card Collection</h1>
 
-<div class="bg-opacity-70 bg-light rounded shadow-sm">
+<div class="bg-opacity-70 rounded shadow-sm" style="background: #d5b88b;">
 
 <p>
     <a asp-action="Create" class="m-sm-2 btn btn-primary rounded-2">Create New</a>
@@ -63,6 +63,9 @@
                         <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
                     </td>
                 </tr>
-}</div>
+
+}
         </tbody>
-</table>
+    </table>
+
+</div>

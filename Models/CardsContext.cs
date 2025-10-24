@@ -15,7 +15,7 @@ namespace LorcanaCardCollector.Models
             modelBuilder.Entity<Cards>().HasData(
                 new Cards
                 {
-                    ID = 1,
+                    ID = "ARI-001",
                     CardName = "Rhino - Motivational Speaker",
                     GemColor = GemColor.AmberSteel,
                     SetName = "Archazia's Island",
@@ -25,7 +25,7 @@ namespace LorcanaCardCollector.Models
 
                 new Cards
                 {
-                    ID = 2,
+                    ID = "ARI-002",
                     CardName = "Perdita - Playful Mother",
                     GemColor = GemColor.AmberSapphire,
                     SetName = "Archazia's Island",
@@ -35,7 +35,7 @@ namespace LorcanaCardCollector.Models
 
                 new Cards
                 {
-                    ID = 3,
+                    ID = "AIR-003",
                     CardName = "King Stefan - New Father",
                     GemColor= GemColor.Amber,
                     SetName = "Archazilia's Island",
