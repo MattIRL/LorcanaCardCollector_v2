@@ -25,7 +25,7 @@ namespace LorcanaCardCollector.Controllers
         }
 
         // GET: Cards/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(string id)
         {
             if (id == null)
             {
@@ -65,7 +65,7 @@ namespace LorcanaCardCollector.Controllers
         }
 
         // GET: Cards/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
             {
@@ -85,7 +85,7 @@ namespace LorcanaCardCollector.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,CardName,GemColor,SetName,Quantity,InADeck")] Cards cards)
+        public async Task<IActionResult> Edit(string id, [Bind("ID,CardName,GemColor,SetName,Quantity,InADeck")] Cards cards)
         {
             if (id != cards.ID)
             {
@@ -116,7 +116,7 @@ namespace LorcanaCardCollector.Controllers
         }
 
         // GET: Cards/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
             {
@@ -136,7 +136,7 @@ namespace LorcanaCardCollector.Controllers
         // POST: Cards/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
             var cards = await _context.Collection.FindAsync(id);
             if (cards != null)
@@ -148,7 +148,7 @@ namespace LorcanaCardCollector.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CardsExists(int id)
+        private bool CardsExists(string id)
         {
             return _context.Collection.Any(e => e.ID == id);
         }

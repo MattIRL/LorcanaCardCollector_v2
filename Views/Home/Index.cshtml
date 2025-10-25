@@ -3,14 +3,15 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="bg-opacity-70 bg-light text-center m-sm-4 rounded shadow-sm">
-    <h3 class="display-6 text-gray-800 pt-sm-4">Welcome to the</h3>
-    <h1 class="display-4 text-gray-800 mb-sm-4 freckle-font">Lorcana Card Collector</h1>
+<div class="text-center m-sm-4 rounded shadow-sm" style="background-color: #d5b88b; opacity: .9;">
+    <!--<h3 class="display-6 text-dark pt-sm-4">Welcome to the</h3> -->
+    <h1 class="display-4 text-dark freckle-font pt-sm-3 mb-sm-0">Lorcana Card Collector</h1>
+    <p class="text-dark mt-sm-0 mb-sm-4" style="font-size: 1.5rem;">Search • Save • Sort</p>
 
     <!-- Search bar and buttons -->
     <form action="/Home/Index" method="post" >
         <div class="form-group p-sm-4">
-            <label asp-for="CardName" class="form-label h4 freckle-face-regular">Search for a Card Name</label>
+            <label asp-for="CardName" class="form-label freckle-face-regular" style="font-size: 1.2rem;">Search for a Card Name</label>
             <input asp-for="CardName" class="form-control" />
         </div>
         <button type="submit" class="btn-primary m-sm-3 rounded-2 ps-sm-2 pe-sm-2">

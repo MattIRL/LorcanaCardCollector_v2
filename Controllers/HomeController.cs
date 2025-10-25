@@ -24,6 +24,7 @@ namespace LorcanaCardCollector.Controllers
         }
         [HttpPost]
         // Search button logic for displaying error or calling card images
+        // Will need foreach on the results from https://api.lorcana-api.com/cards/fetch?search=name~micke
         public IActionResult Index(LorcanaCardCollectorModel model)
         {
             if (ModelState.IsValid)

@@ -4,9 +4,9 @@
     ViewData["Title"] = "Card Collection";
 }
 
-<h1 class="text-light freckle-font">Card Collection</h1>
+<h1 class="freckle-font" style="color: #d5b88b; opacity: 0.9;">Card Collection</h1>
 
-<div class="bg-opacity-70 bg-light rounded shadow-sm">
+<div class="bg-opacity-70 rounded shadow-sm" style="background: #d5b88b;">
 
 <p>
     <a asp-action="Create" class="m-sm-2 btn btn-primary rounded-2">Create New</a>
@@ -14,6 +14,9 @@
 <table class="table table table-striped">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(Model => Model.ImgUrl)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.CardName)
             </th>
@@ -36,6 +39,11 @@
         @foreach (var item in Model) {
                 <tr>
                     <td>
+                        <img src=@item.ImgUrl
+                             onclick="openImageOverlay('@item.ImgUrl')"
+                             style="height:150px; cursor:pointer;" />
+                    </td>
+                    <td class="h5">
                         @Html.DisplayFor(modelItem => item.CardName)
                     </td>
                     <td>
@@ -58,11 +66,29 @@
                         }
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        <a asp-action="Edit" class="btn btn-secondary me-sm-2 text-light" asp-route-id="@item.ID">Edit</a>
+                        <a asp-action="Details" class="btn btn-secondary me-sm-2 text-light" asp-route-id="@item.ID">Details</a>
+                        <a asp-action="Delete" class="btn btn-danger me-sm-2 text-light" asp-route-id="@item.ID">Delete</a>
                     </td>
                 </tr>
-}</div>
+
+}
         </tbody>
-</table>
+    </table>
+    <div id="imageOverlay" class="overlay" onclick="closeImageOverlay()">
+        <span class="close-btn" onclick="closeImageOverlay(event)"><i class="fa-solid fa-xmark"></i></span>
+        <img id="overlayImg" class="overlay-content" />
+    </div>
+    <script>
+        function openImageOverlay(url) {
+            document.getElementById("overlayImg").src = url;
+            document.getElementById("imageOverlay").style.display = "flex";
+        }
+
+        function closeImageOverlay(event) {
+            // prevent closing when clicking the image itself
+            if (event && event.target.id === "overlayImg") return;
+            document.getElementById("imageOverlay").style.display = "none";
+        }
+    </script>
+</div>
