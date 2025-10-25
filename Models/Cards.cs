@@ -16,35 +16,35 @@ namespace LorcanaCardCollector.Models
         Steel,
 
         // Two-color combinations
-        [Display(Name ="Amber Amethyst")]
+        [Display(Name ="Amber & Amethyst")]
         AmberAmethyst,
-        [Display(Name = "Amber Emerald")]
+        [Display(Name = "Amber & Emerald")]
         AmberEmerald,
-        [Display(Name = "Amber Ruby")]
+        [Display(Name = "Amber & Ruby")]
         AmberRuby,
-        [Display(Name = "Amber Sapphire")]
+        [Display(Name = "Amber & Sapphire")]
         AmberSapphire,
-        [Display(Name = "Amber Steel")]
+        [Display(Name = "Amber & Steel")]
         AmberSteel,
-        [Display(Name = "Amethyst Emerald")]
+        [Display(Name = "Amethyst & Emerald")]
         AmethystEmerald,
-        [Display(Name = "Amethyst Ruby")]
+        [Display(Name = "Amethyst & Ruby")]
         AmethystRuby,
-        [Display(Name = "Amethyst Sapphire")]
+        [Display(Name = "Amethyst & Sapphire")]
         AmethystSapphire,
-        [Display(Name = "Amethyst Steel")]
+        [Display(Name = "Amethyst & Steel")]
         AmethystSteel,
-        [Display(Name = "Emerald Ruby")]
+        [Display(Name = "Emerald & Ruby")]
         EmeraldRuby,
-        [Display(Name = "Amethyst Sapphire")]
+        [Display(Name = "Amethyst & Sapphire")]
         EmeraldSapphire,
-        [Display(Name = "Amethyst Steel")]
+        [Display(Name = "Amethyst & Steel")]
         EmeraldSteel,
-        [Display(Name = "Ruby Sapphire")]
+        [Display(Name = "Ruby & Sapphire")]
         RubySapphire,
-        [Display(Name = "Ruby Steel")]
+        [Display(Name = "Ruby & Steel")]
         RubySteel,
-        [Display(Name = "Sapphire Steel")]
+        [Display(Name = "Sapphire & Steel")]
         SapphireSteel, 
     }
     public class Cards
@@ -64,6 +64,7 @@ namespace LorcanaCardCollector.Models
         [Required]
         [Display(Name = "Set Name")]
         [StringLength(100, ErrorMessage ="Please enter a set name using 100 characters or less.")]
+        [RegularExpression(@"^[\p{L} ']+$", ErrorMessage = "Only alphabetic letters are allowed.")]
         public string? SetName { get; set; }
 
         [Required]
@@ -72,5 +73,8 @@ namespace LorcanaCardCollector.Models
         public int Quantity { get; set; }
         [Display(Name = "In a Deck")]
         public bool InADeck { get; set; }
+        [Display(Name = "Card Image")]
+        [StringLength(255)]
+        public string? ImgUrl { get; set; }
     }
 }

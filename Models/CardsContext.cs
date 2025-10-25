@@ -21,6 +21,7 @@ namespace LorcanaCardCollector.Models
                     SetName = "Archazia's Island",
                     Quantity = 1,
                     InADeck = true,
+                    ImgUrl = "https://lorcana-api.com/images/rhino/motivational_speaker/rhino-motivational_speaker-large.png"
                 },
 
                 new Cards
@@ -31,6 +32,7 @@ namespace LorcanaCardCollector.Models
                     SetName = "Archazia's Island",
                     Quantity = 1,
                     InADeck = false,
+                    ImgUrl = "https://lorcana-api.com/images/perdita/playful_mother/perdita-playful_mother-large.png"
                 },
 
                 new Cards
@@ -41,6 +43,7 @@ namespace LorcanaCardCollector.Models
                     SetName = "Archazilia's Island",
                     Quantity = 2,
                     InADeck = true,
+                    ImgUrl = "https://lorcana-api.com/images/king_stefan/new_father/king_stefan-new_father-large.png"
                 }
             );
         }
